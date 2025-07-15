@@ -67,7 +67,7 @@ const LANGUAGE_WEIGHTS = {
 };
 
 function getLanguageWeight(language: string): number {
-  return LANGUAGE_WEIGHTS[language] || 1.0;
+  return LANGUAGE_WEIGHTS[language as keyof typeof LANGUAGE_WEIGHTS] || 1.0;
 }
 
 function analyzeLanguages(languages: Record<string, number>) {
